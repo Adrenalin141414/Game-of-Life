@@ -1,4 +1,4 @@
-# Game of life
+# Game of Life
 
 ## How to start the game?
 1. Clone the repository or download it as a zip archive
@@ -17,6 +17,6 @@ These rules, which compare the behaviour of the automaton to real life, can be c
 - Any dead cell with three live neighbours becomes a live cell.
 - All other live cells die in the next generation. Similarly, all other dead cells stay dead.
 
-The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed, live or dead; births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick.[nb 1] Each generation is a pure function of the preceding one. The rules continue to be applied repeatedly to create further generations.
+The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed, live or dead; births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one. The rules continue to be applied repeatedly to create further generations.
 
 Source: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
