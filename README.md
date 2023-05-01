@@ -1,4 +1,4 @@
-# Game of life
+# Game of Life
 
 ## How to start the game?
 1. Clone the repository or download it as a zip archive
