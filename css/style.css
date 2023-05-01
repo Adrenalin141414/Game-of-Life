@@ -1,50 +1,50 @@
 /* ALL */
 
 *, *::before, *::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
 }
 
 
 /* ROOT */
 
 :root {
-	/* COLORS */
-	--black-color: #000;
-	--blue-color: #00f;
-	--orange-color: orange;
-	--white-color: #fff;
-	
-	--buttonface-color: buttonface;
-	--buttonface-hover-color: #E5E5E5;
-	--buttonface-active-color: #F5F5F5;
-	
-	--buttonborder-color: buttonborder;
-	--buttonborder-hover-color: #4F4F4F;
-	--buttonborder-active-color: #8D8D8D;
+  /* COLORS */
+  --black-color: #000;
+  --blue-color: #00f;
+  --orange-color: orange;
+  --white-color: #fff;
+  
+  --buttonface-color: buttonface;
+  --buttonface-hover-color: #E5E5E5;
+  --buttonface-active-color: #F5F5F5;
+  
+  --buttonborder-color: buttonborder;
+  --buttonborder-hover-color: #4F4F4F;
+  --buttonborder-active-color: #8D8D8D;
 
-	--light-grey-color: #ccc;
-	--light-orange-color: #FFC300;
+  --light-grey-color: #ccc;
+  --light-orange-color: #FFC300;
 
-	--dark-grey-color: #b0b0b0;
-	--dark-orange-color: darkorange;
+  --dark-grey-color: #b0b0b0;
+  --dark-orange-color: darkorange;
 
-	--text-color: #333;
-	--modal-bg-color: #fefefe;
+  --text-color: #333;
+  --modal-bg-color: #fefefe;
 }
 
 html {
-	height: 100%;
-	font-size: 14px;
+  height: 100%;
+  font-size: 14px;
 }
 
 body {
-	min-height: 100vh;
-	font-family: Arial;
-	color: var(--text-color);
-	background-color: var(--orange-color);
+  min-height: 100vh;
+  font-family: Arial;
+  color: var(--text-color);
+  background-color: var(--orange-color);
 }
 
 
@@ -108,22 +108,22 @@ body {
 /* Anchor */
 
 a {
-	text-decoration: none;
-	color: var(--blue-color);
+  text-decoration: none;
+  color: var(--blue-color);
 }
 
 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 
 /* HR */
 
 hr {
-	height: 1px;
-	border: none;
-	color: var(--blue-color);
-	background-color: var(--blue-color);
+  height: 1px;
+  border: none;
+  color: var(--blue-color);
+  background-color: var(--blue-color);
 }
 
 
@@ -137,7 +137,7 @@ hr {
 /* Layout */
 
 main {
-	flex: 1;
+  flex: 1;
 }
 
 
@@ -158,64 +158,64 @@ main {
 .max-h-855 { max-height: 855px; }
 
 #game-of-life {
-	-webkit-box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
-	-moz-box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
-	box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
+  -webkit-box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
+  -moz-box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
+  box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
 }
 
 #game-of-life .canvas-container {
-	width: 100%;
-	overflow: auto;
+  width: 100%;
+  overflow: auto;
 }
 
 #game-of-life #canvas {
-	background-color: var(--white-color);
+  background-color: var(--white-color);
 }
 
 #game-of-life #controls {
-	width: 100%;
-	height: 50px;
-	background-color: var(--light-grey-color);
+  width: 100%;
+  height: 50px;
+  background-color: var(--light-grey-color);
 }
 
 #game-of-life #controls button,
 #game-of-life #controls select {
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 #game-of-life #controls button > * {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #game-of-life #controls button:last-child,
 #game-of-life #controls select:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 #game-of-life button,
 #game-of-life select {
-	display: flex;
-	align-items: center;
-	border: 1px outset var(--dark-grey-color);
-	border-radius: 3px;
-	background-color: var(--buttonface-color);
-	padding: 5px 10px;
-	line-height: 1;
-	color: var(--text-color);
-	cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px outset var(--dark-grey-color);
+  border-radius: 3px;
+  background-color: var(--buttonface-color);
+  padding: 5px 10px;
+  line-height: 1;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 #game-of-life button {
-	justify-content: center;
+  justify-content: center;
 }
 
 #game-of-life button:disabled,
 #game-of-life select:disabled,
 #game-of-life input:disabled,
 #game-of-life .checkbox-container input:disabled ~ * {
-	cursor: not-allowed;
-	opacity: 0.7;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 #game-of-life select {
@@ -225,7 +225,7 @@ main {
 
   padding-right: 25px;
 
-	/* Arrow */
+  /* Arrow */
   appearance: none;
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
@@ -234,50 +234,50 @@ main {
 }
 
 #game-of-life select:focus-visible {
-	outline: 0;
+  outline: 0;
 }
 
 #game-of-life button:hover:not(:disabled),
 #game-of-life select:hover:not(:disabled) {
-	background-color: var(--buttonface-hover-color);
-	border: 1px outset var(--buttonborder-hover-color);
-	cursor: pointer;
+  background-color: var(--buttonface-hover-color);
+  border: 1px outset var(--buttonborder-hover-color);
+  cursor: pointer;
 }
 
 #game-of-life button:active:not(:disabled) {
-	background-color: var(--buttonface-active-color);
-	border: 1px outset var(--buttonborder-active-color);
+  background-color: var(--buttonface-active-color);
+  border: 1px outset var(--buttonborder-active-color);
 }
 
 #game-of-life button#play-pause {
-	width: 40px;
-	color: var(--white-color);
-	background-color: var(--orange-color);
+  width: 40px;
+  color: var(--white-color);
+  background-color: var(--orange-color);
 }
 
 #game-of-life button#play-pause:hover:not(:disabled) {
-	background-color: var(--dark-orange-color);
+  background-color: var(--dark-orange-color);
 }
 
 #game-of-life button#play-pause:active:not(:disabled) {
-	background-color: var(--light-orange-color);
+  background-color: var(--light-orange-color);
 }
 
 #game-of-life .v-divider {
-	border-left: 1px solid var(--text-color);
-	height: 1rem;
+  border-left: 1px solid var(--text-color);
+  height: 1rem;
 }
 
 #game-of-life .slider-container {
-	position: relative;
+  position: relative;
 }
 
 #game-of-life .slider-container #delay-value {
-	position: absolute;
-	width: 100%;
-	text-align: center;
-	color: var(--text-color);
-	pointer-events: none;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: var(--text-color);
+  pointer-events: none;
 }
 
 #game-of-life .slider {
@@ -302,9 +302,9 @@ main {
 }
 
 #game-of-life .slider::-webkit-slider-thumb:hover {
-	background-color: var(--dark-orange-color);
-	border: 1px outset var(--buttonborder-hover-color);
-	cursor: pointer;
+  background-color: var(--dark-orange-color);
+  border: 1px outset var(--buttonborder-hover-color);
+  cursor: pointer;
 }
 
 #game-of-life .slider::-moz-range-thumb {
@@ -317,16 +317,16 @@ main {
 }
 
 #game-of-life .slider::-moz-range-thumb:hover {
-	background-color: var(--dark-orange-color);
-	border: 1px outset var(--buttonborder-hover-color);
-	cursor: pointer;
+  background-color: var(--dark-orange-color);
+  border: 1px outset var(--buttonborder-hover-color);
+  cursor: pointer;
 }
 
 
 /* Checkbox */
 
 #game-of-life input[type="checkbox"], input[type="checkbox"] ~ span {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 /* Checkbox label (container) */
@@ -367,9 +367,9 @@ main {
 
 /* Checkmark - галочка чекбокса (скрыта, когда чекбокс не отмечен) */
 #game-of-life .checkbox-container .checkmark {
-	display: none;
-	line-height: 1;
-	color: var(--white-color);
+  display: none;
+  line-height: 1;
+  color: var(--white-color);
 }
 
 /* Show the checkmark when checked */
@@ -382,11 +382,11 @@ main {
 /* Loader */
 
 #game-of-life #loader {
-/*	display: none;*/
-	visibility: hidden;
-	position: absolute;
-	top: calc(50% - 25px);
-	left: calc(50% - 25px);
+/*  display: none;*/
+  visibility: hidden;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
   border: 5px solid var(--orange-color);
   border-top: 5px solid var(--blue-color);
   border-radius: 50%;
@@ -419,22 +419,22 @@ main {
 
 /* Modal (window) */
 .modal-window {
-	position: relative;
+  position: relative;
   background-color: #fefefe;
   border: 1px solid #888;
   width: 800px;
   max-width: 90%;
 
   -webkit-box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
-	-moz-box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
-	box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
+  -moz-box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
+  box-shadow: 0px 0px 14px 3px rgba(34, 60, 80, 0.3);
 }
 
 /* Modal (close button) */
 .close {
-	position: absolute;
-	top: 0;
-	right: 8px;
+  position: absolute;
+  top: 0;
+  right: 8px;
   color: var(--text-color);
   font-size: 28px;
   font-weight: bold;

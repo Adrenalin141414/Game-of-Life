@@ -1,92 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Game of Life</title>
-	<script defer src="js/game-of-life.js"></script>
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Game of Life</title>
+  <script defer src="js/game-of-life.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="flex flex-col">
-	<header class="flex jc-center p-20">
-		<div class="flex flex-col ai-center">
-			<h1 title="This version of &quot;Game of Life&quot; is dedicated to the blessed memory of John Horton Conway">Game of <span class="blue">Life</span></h1>
-			<p class="letter-spacing-0dot05rem" title="This version of &quot;Game of Life&quot; is dedicated to the blessed memory of John Horton Conway">to the blessed memory of <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a></p>
-		</div>
-	</header>
+  <header class="flex jc-center p-20">
+    <div class="flex flex-col ai-center">
+      <h1 title="This version of &quot;Game of Life&quot; is dedicated to the blessed memory of John Horton Conway">Game of <span class="blue">Life</span></h1>
+      <p class="letter-spacing-0dot05rem" title="This version of &quot;Game of Life&quot; is dedicated to the blessed memory of John Horton Conway">to the blessed memory of <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Horton Conway</a></p>
+    </div>
+  </header>
 
-	<main class="flex flex-col jc-center ai-center mt-10">
-		<section id="game-of-life" class="flex flex-col jc-center ai-center max-w-1201 max-h-855">
-			<div id="controls" class="flex ai-stretch jc-space-between p-5">
-				<div class="group-left flex min-w-25p">
-					<button id="new-game" class="btn" onclick="init()" title="New game">New</button>
-					<select id="pattern" onchange="onPatternChange()" title="Pattern select">
-						<option disabled value="placeholder">- Select pattern -</option>
-						<option value="empty">Empty (default)</option>
-						<option value="custom">Custom</option>
-						<option value="random-cells">Random cells</option>
-						<option disabled value="select-option-group">- Figures -</option>
-						<option value="blinker">Blinker</option>
-						<option value="glider">Glider</option>
-						<option value="star">Star</option>
-						<option value="cross">Cross</option>
-						<option value="french-kiss">French kiss</option>
-						<!-- <option value="smiling-face">Smiling face</option> -->
-					</select>
-					<button id="next-gen" class="btn" onclick="nextGen()" title="Next generation of cells">Next Gen</button>
-					<!-- <button id="random-cells" class="btn" onclick="drawRandomCells()">Random Cells</button> -->
-					<button id="play-pause" class="btn" onclick="playpause()" title="Play/Pause"><span>⏵</span></button>
-				</div>
+  <main class="flex flex-col jc-center ai-center mt-10">
+    <section id="game-of-life" class="flex flex-col jc-center ai-center max-w-1201 max-h-855">
+      <div id="controls" class="flex ai-stretch jc-space-between p-5">
+        <div class="group-left flex min-w-25p">
+          <button id="new-game" class="btn" onclick="init()" title="New game">New</button>
+          <select id="pattern" onchange="onPatternChange()" title="Pattern select">
+            <option disabled value="placeholder">- Select pattern -</option>
+            <option value="empty">Empty (default)</option>
+            <option value="custom">Custom</option>
+            <option value="random-cells">Random cells</option>
+            <option disabled value="select-option-group">- Figures -</option>
+            <option value="blinker">Blinker</option>
+            <option value="glider">Glider</option>
+            <option value="star">Star</option>
+            <option value="cross">Cross</option>
+            <option value="french-kiss">French kiss</option>
+            <!-- <option value="smiling-face">Smiling face</option> -->
+          </select>
+          <button id="next-gen" class="btn" onclick="nextGen()" title="Next generation of cells">Next Gen</button>
+          <!-- <button id="random-cells" class="btn" onclick="drawRandomCells()">Random Cells</button> -->
+          <button id="play-pause" class="btn" onclick="playpause()" title="Play/Pause"><span>⏵</span></button>
+        </div>
 
-				<div class="group-center flex">
-					<div class="stats flex ai-center mtb-10">
-						<span id="game-state"><strong>Game state:</strong> Creating Initial Pattern</span>&nbsp;<div class="v-divider mlr-5"></div>&nbsp;
-						<span id="alive-cells" class="blue"><strong>Alive cells:</strong> 0</span>&nbsp;<div class="v-divider mlr-5"></div>&nbsp;
-						<span id="gen"><strong>Generation:</strong> 0</span>
-					</div>
-				</div>
+        <div class="group-center flex">
+          <div class="stats flex ai-center mtb-10">
+            <span id="game-state"><strong>Game state:</strong> Creating Initial Pattern</span>&nbsp;<div class="v-divider mlr-5"></div>&nbsp;
+            <span id="alive-cells" class="blue"><strong>Alive cells:</strong> 0</span>&nbsp;<div class="v-divider mlr-5"></div>&nbsp;
+            <span id="gen"><strong>Generation:</strong> 0</span>
+          </div>
+        </div>
 
-				<div class="group-right flex jc-flex-end min-w-25p">
-					<label class="flex ai-center">
-						<span title="Game timer tick delay in milliseconds &#013;(for more precision, use keyboard arrow keys)">Delay</span>&nbsp;
-						<span class="slider-container flex ai-center mr-10" title="Game timer tick delay in milliseconds &#013;(for more precision, use keyboard arrow keys)">
-							<span id="delay-value"></span>
-							<input type="range" min="0" max="1000" value="0" class="slider" id="slider-delay" oninput="updateDelay(this.value)">
-						</span>
-					</label>
-					
-					<label class="flex ai-center checkbox-container" title="No game over! You can draw while playing!">
-						<input id="endless-game" type="checkbox" onchange="onCheckboxChange('endless-game', this.checked)">
-						<span class="checkbox flex jc-center ai-center"><span class="checkmark">✔</span></span>&nbsp;
-						<span class="text">Endless game</span>
-					</label>
-				</div>
-			</div>
+        <div class="group-right flex jc-flex-end min-w-25p">
+          <label class="flex ai-center">
+            <span title="Game timer tick delay in milliseconds &#013;(for more precision, use keyboard arrow keys)">Delay</span>&nbsp;
+            <span class="slider-container flex ai-center mr-10" title="Game timer tick delay in milliseconds &#013;(for more precision, use keyboard arrow keys)">
+              <span id="delay-value"></span>
+              <input type="range" min="0" max="1000" value="0" class="slider" id="slider-delay" oninput="updateDelay(this.value)">
+            </span>
+          </label>
+          
+          <label class="flex ai-center checkbox-container" title="No game over! You can draw while playing!">
+            <input id="endless-game" type="checkbox" onchange="onCheckboxChange('endless-game', this.checked)">
+            <span class="checkbox flex jc-center ai-center"><span class="checkmark">✔</span></span>&nbsp;
+            <span class="text">Endless game</span>
+          </label>
+        </div>
+      </div>
 
-			<div class="canvas-container">
-				<canvas id="canvas"></canvas>
-			</div>
+      <div class="canvas-container">
+        <canvas id="canvas"></canvas>
+      </div>
 
-			<div id="loader"></div>
-		</section>
-	</main>
+      <div id="loader"></div>
+    </section>
+  </main>
 
-	<aside>
-		<div id="modal" class="modal flex ai-center jc-center">
-		  <div class="modal-window flex flex-col ai-center jc-center">
-		  	<header class="flex jc-center ai-center w-full h-50 p-10 bc-orange blue modal-header">
-		    	<h1 id="modal-title">Modal header</h1>
-		    	<span class="close" onclick="closeModal()">&times;</span>
-		  	</header>
+  <aside>
+    <div id="modal" class="modal flex ai-center jc-center">
+      <div class="modal-window flex flex-col ai-center jc-center">
+        <header class="flex jc-center ai-center w-full h-50 p-10 bc-orange blue modal-header">
+          <h1 id="modal-title">Modal header</h1>
+          <span class="close" onclick="closeModal()">&times;</span>
+        </header>
 
-		  	<section id="modal-content" class="flex flex-col ai-center jc-center w-full min-h-200 p-10 w-full">
-		  	</section>
-		  </div>
-		</div>
-	</aside>
+        <section id="modal-content" class="flex flex-col ai-center jc-center w-full min-h-200 p-10 w-full">
+        </section>
+      </div>
+    </div>
+  </aside>
 
-	<footer id="main-footer" class="flex flex-col ai-center mt-20 p-10 blue font-size-12px">
-		<p class="mb-10" title="This version of &quot;Game of Life&quot; is dedicated to the blessed memory of John Horton Conway">Created with ❤️ by <a href="mailto:adrenalin141414@gmail.com?subject=Game%20of%20Life" title="Report a bug, suggest idea, or just send me e-mail :)">&lt;&lt;{ K.$.$. }&gt;&gt;</a></p>
-		<p title="This version of &quot;Game of Life&quot; is dedicated to the blessed memory of John Horton Conway">2023</p>
-	</footer>
+  <footer id="main-footer" class="flex flex-col ai-center mt-20 p-10 blue font-size-12px">
+    <p class="mb-10" title="This version of &quot;Game of Life&quot; is dedicated to the blessed memory of John Horton Conway">Created with ❤️ by <a href="mailto:adrenalin141414@gmail.com?subject=Game%20of%20Life" title="Report a bug, suggest idea, or just send me e-mail :)">&lt;&lt;{ K.$.$. }&gt;&gt;</a></p>
+    <p title="This version of &quot;Game of Life&quot; is dedicated to the blessed memory of John Horton Conway">2023</p>
+  </footer>
 </body>
 </html>

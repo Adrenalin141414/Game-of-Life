@@ -151,24 +151,24 @@ canvas.addEventListener('mousedown', function(e) {
   }
 
   switch(e.button) {
-  	case 0: // LMB
+    case 0: // LMB
       // Если игра уже запущена в обычном (небесконечном) режиме — показываем сообщение о том, что в таком режиме рисовать вручную нельзя и просто выходим
       if (gameState !== gameStates.init && !endlessGame) { showCantDrawModal(); return; }
 
-  	  isDrawing = true;
-  	  isRemoving = false;
-  	  drawCell(e);
+      isDrawing = true;
+      isRemoving = false;
+      drawCell(e);
 
-  	  break;
-  	case 2: // RMB
+      break;
+    case 2: // RMB
       // Если игра уже запущена в обычном (небесконечном) режиме — показываем сообщение о том, что в таком режиме рисовать вручную нельзя и просто выходим
       if (gameState !== gameStates.init && !endlessGame) { showCantDrawModal(); return; }
 
-  	  isDrawing = false;
-  	  isRemoving = true;
-  	  removeCell(e);
+      isDrawing = false;
+      isRemoving = true;
+      removeCell(e);
 
-  	  break;
+      break;
   }
 });
 
@@ -253,7 +253,7 @@ function drawGrid() {
  */
 function enterTheMatrix() {
   for (let i = 0; i < CELLS_ALL; i++) {
-  	/* 0 - unpopulated, 1 - populated */
+    /* 0 - unpopulated, 1 - populated */
     cellMatrix[i] = nextMatrix[i] = 0;
   }
 }
@@ -391,7 +391,7 @@ function nextGen() {
   if (gameState === gameStates.init) {
     // если кнопка "Следующее поколение" нажата при создании начального игрового паттерна (поколение 0), то меняем состояние игры на "Приостановлена",
     // поскольку при этом функция nextGen сгенерирует первое поколение клеток игры (игра начнется и сразу поставится на паузу)
-  	gameState = gameStates.paused;
+    gameState = gameStates.paused;
     updateGameStats('game-state', gameState);
 
     patternStorage.initial.aliveCells = aliveCells; // сохраняем начальное количество живых клеток
@@ -420,11 +420,11 @@ function nextGen() {
   
   aliveCells = 0;
   cellMatrix = nextMatrix.map(item => {
-  	if (item === 1) {
-  	  aliveCells++;
-  	}
+    if (item === 1) {
+      aliveCells++;
+    }
   
-  	return item;
+    return item;
   });
 
   updateGameStats('alive-cells', aliveCells);
