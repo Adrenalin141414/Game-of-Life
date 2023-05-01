@@ -663,7 +663,7 @@ function getAliveNeighbours(cellIndex) {
  */
 function drawRandomCells() {
   for (let i = 0; i < CELLS_ALL; i++) {
-    if (getRandomInt(0, 2) === 1) {
+    if (getRandomInt(0, 1) === 1) {
       const colIndex = getColIndex(i);
       const rowIndex = getRowIndex(i);
       drawCell(null, { x: colIndex * CELL_SIZE, y: rowIndex * CELL_SIZE, index: i });
